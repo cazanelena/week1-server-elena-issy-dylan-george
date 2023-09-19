@@ -9,7 +9,8 @@
     "scripts": {
         "start": "nodemon src/index",
         "format": "npx prettier --write .",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start-fly": "node src/index"
     },
     "keywords": [],
     "author": "",
@@ -18,6 +19,7 @@
         "express": "^4.18.2"
     },
     "devDependencies": {
+        "@flydotio/dockerfile": "^0.4.10",
         "nodemon": "^3.0.1",
         "prettier": "^3.0.3"
     }
