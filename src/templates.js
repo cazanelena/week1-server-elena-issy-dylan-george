@@ -17,6 +17,7 @@ function form() {
     `;
     return layout(title, content);
 }
+
 function defaultPosts() {
     const title = "No Recent Paranormal Events";
 
@@ -27,25 +28,30 @@ function defaultPosts() {
 
     return layout(title, content);
 }
+
 function renderingPosts(posts) {
     const title = "Recent Paranormal Activity";
 
     const content = `
     <h2>All posts</h2>
     <ul>
-        ${posts.map(postItem).join("")}
+      ${posts.map((post, index) => postItem(post, index)).join("")}
     </ul>
-    <a href="/submit-post"><button>Add Post</button></a>
+    <a href="/submit-post"><button id="addPostButton">Add Post</button></a>
     `;
     return layout(title, content);
 }
-function postItem(post) {
+
+function postItem(post, index) {
     const date = new Date(post.created);
     const prettyDate = date.toLocaleString("en-GB");
     return `
       <li>
         <p>${post.message}</p>
         <p>—${post.username} | ${prettyDate}</p>
+        <a href="/delete-post/${index}" class="delete-link">
+          <button class="deletePostButton">Delete</button>
+        </a>
       </li>
     `;
 }

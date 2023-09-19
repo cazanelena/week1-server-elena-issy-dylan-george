@@ -39,4 +39,16 @@ server.post("/submit-post", express.urlencoded({ extended: false }), (req, res) 
     }
 });
 
+server.get("/delete-post/:index", (req, res) => {
+    const index = req.params.index;
+
+    if (index >= 0 && index < posts.length) {
+        // Remove the post at the specified index from the `posts` array
+        posts.splice(index, 1);
+    }
+
+    // Redirect back to the main page after deleting the post
+    res.redirect("/");
+});
+
 module.exports = server;
