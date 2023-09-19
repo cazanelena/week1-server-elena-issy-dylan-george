@@ -1,5 +1,5 @@
 const express = require("express");
-const { home } = require("./templates");
+const { form, renderingPosts, defaultPosts } = require("./templates");
 const server = express();
 
 server.use(express.static("public"));
@@ -8,10 +8,18 @@ server.use(express.static("public"));
 const posts = [];
 
 server.get("/", (req, res) => {
-    res.send(home(posts));
+    if (posts.length == 0) {
+        res.send(defaultPosts());
+    } else {
+        res.send(renderingPosts(posts));
+    }
 });
 
-server.post("/", express.urlencoded({ extended: false }), (req, res) => {
+server.get("/submit-post", (req, res) => {
+    res.send(form());
+});
+
+server.post("/submit-post", express.urlencoded({ extended: false }), (req, res) => {
     const username = req.body.username || "Anonymous";
     const message = req.body.message;
 
@@ -23,7 +31,7 @@ server.post("/", express.urlencoded({ extended: false }), (req, res) => {
 
     // if there are errors:
     if (Object.keys(errors).length) {
-        const body = home(posts);
+        const body = form();
     } else {
         const created = Date.now();
         posts.push({ username, message, created });

@@ -1,4 +1,4 @@
-function home(posts) {
+function form() {
     const title = "All posts";
 
     const content = `
@@ -14,12 +14,24 @@ function home(posts) {
         </p>
         <button>Send</button>
       </form>
-      <h2>All posts</h2>
-      <ul>
-        ${posts.map(postItem).join("")}
-      </ul>
     `;
     return layout(title, content);
+}
+function defaultPosts() {
+    return `
+    <h1> NO POSTS</h1>
+    <a href="/submit-post"><button>Add Post</button></a>
+    `;
+}
+function renderingPosts(posts) {
+    const html = `
+    <h2>All posts</h2>
+    <ul>
+        ${posts.map(postItem).join("")}
+    </ul>
+    <a href="/submit-post"><button>Add Post</button></a>
+    `;
+    return html;
 }
 function postItem(post) {
     const date = new Date(post.created);
@@ -43,8 +55,9 @@ function layout(title, content) {
         <body>
           ${content}
         </body>
+
       </html>
     `;
 }
 
-module.exports = { home };
+module.exports = { form, renderingPosts, defaultPosts };
