@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* colours */
+    --background: #94cc9f;
+}
+
+body {
+    background-color: var(--background);
+}
+
+h1 {
+    text-align: center;
+}
+
+.main-container {
+    width: 70%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    /* text-align: center; */
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.child-container {
+    padding: 20%;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 10px 10px 45px 0px rgba(0, 0, 0, 0.31);
+}
