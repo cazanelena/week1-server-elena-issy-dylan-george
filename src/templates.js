@@ -1,5 +1,5 @@
 function form() {
-    const title = "All posts";
+    const title = "Report a Paranormal Event";
 
     const content = `
       <h2>New post</h2>
@@ -18,20 +18,26 @@ function form() {
     return layout(title, content);
 }
 function defaultPosts() {
-    return `
+    const title = "No Recent Paranormal Events";
+
+    const content = `
     <h1> NO POSTS</h1>
     <a href="/submit-post"><button>Add Post</button></a>
     `;
+
+    return layout(title, content);
 }
 function renderingPosts(posts) {
-    const html = `
+    const title = "Recent Paranormal Activity";
+
+    const content = `
     <h2>All posts</h2>
     <ul>
         ${posts.map(postItem).join("")}
     </ul>
     <a href="/submit-post"><button>Add Post</button></a>
     `;
-    return html;
+    return layout(title, content);
 }
 function postItem(post) {
     const date = new Date(post.created);
@@ -51,6 +57,7 @@ function layout(title, content) {
         <head>
           <title>${title}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="css/style.css">
         </head>
         <body>
           ${content}
