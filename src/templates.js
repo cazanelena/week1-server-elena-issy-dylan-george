@@ -1,7 +1,7 @@
 function home(posts) {
-  const title = "All posts";
+    const title = "All posts";
 
-  const content = `
+    const content = `
       <h2>New post</h2>
       <form method="POST">
         <p>
@@ -19,7 +19,7 @@ function home(posts) {
         ${posts.map(postItem).join("")}
       </ul>
     `;
-  return layout(title, content);
+    return layout(title, content);
 }
 function postItem(post) {
     const date = new Date(post.created);
@@ -27,11 +27,11 @@ function postItem(post) {
     return `
       <li>
         <p>${post.message}</p>
-        <p>—${post.nickname} | ${prettyDate}</p>
+        <p>—${post.username} | ${prettyDate}</p>
       </li>
     `;
-  }
-  
+}
+
 function layout(title, content) {
     return /*html*/ `
       <!doctype html>
@@ -45,6 +45,6 @@ function layout(title, content) {
         </body>
       </html>
     `;
-  }
-  
-module.exports = { home }
+}
+
+module.exports = { home };
