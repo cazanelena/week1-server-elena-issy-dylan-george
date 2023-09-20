@@ -82,9 +82,10 @@ function postItem(post, index) {
     const formattedTime = date2.toLocaleTimeString("en-GB", timeOptions);
 
     return `
-      <li>
-        <p>${sanitize(post.message)}</p>
-        <p>By ${sanitize(post.username)} | ${date} ${formattedTime}</p>
+      <li class="message-container">
+        <p class="message">${sanitize(post.message)}</p>
+        <p class="user-info">By ${sanitize(post.username)} | ${date} ${formattedTime}</p>
+
         <a href="/delete-post/${index}" class="delete-link">
           <button class="deletePostButton">Delete</button>
         </a>
