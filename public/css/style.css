@@ -37,6 +37,7 @@
 * {
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+    text-decoration: none;
     scroll-behavior: smooth;
 }
 
@@ -158,6 +159,28 @@ label {
 }
 
 .deletePostButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.flagPostButton {
+    padding: 0.5rem;
+    width: auto;
+    aspect-ratio: 1/1;
+    box-shadow: inset 0px 1px 0px 0px #f2e291;
+    background: linear-gradient(to bottom, #ffd500 5%, #ccaa00 100%);
+    background-color: #ffd500;
+    border-radius: 6px;
+    border: 1px solid #d9bb26;
+    color: white;
+}
+
+.flagPostButton:hover {
+    background: linear-gradient(to bottom, #cc9900 5%, #ffc400 100%);
+    background-color: #cc9900;
+}
+
+.flagPostButton:active {
     position: relative;
     top: 1px;
 }
