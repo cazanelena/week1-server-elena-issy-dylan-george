@@ -22,8 +22,8 @@ function defaultPosts() {
     const title = "No Recent Paranormal Events";
 
     const content = `
-    <h1> NO POSTS</h1>
-    <a href="/submit-post"><button>Add Post</button></a>
+    <h2>There have been no sightings yet...</h2>
+    <a href="/submit-post"><button>Report Activity</button></a>
     `;
 
     return layout(title, content);
@@ -63,10 +63,21 @@ function layout(title, content) {
         <head>
           <title>${title}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Spectral:wght@300&display=swap" rel="stylesheet">
+
+
           <link rel="stylesheet" href="css/style.css">
         </head>
         <body>
-          ${content}
+
+          <div class="main-container">
+            <h1>Paranormal Activity Newsboard</h1>
+            <div class="child-container">
+             ${content}
+            </div>
+          </div>
         </body>
 
       </html>

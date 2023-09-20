@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* colours */
+    --background: #e9e7e2;
+    --red-hue: #fe3333;
+    --light-blue: #488ad4;
+    --mid-blue: #095ca9;
+}
+
+body {
+    background-color: var(--background);
+    /* font-family: "Spectral", serif; */
+}
+
+h1 {
+    text-align: center;
+    color: var(--red-hue);
+    font-family: "Metal Mania", cursive;
+}
+
+.main-container {
+    width: 70%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    /* text-align: center; */
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-container > *:not(:first-child) {
+    margin-top: 50px;
+}
+
+.child-container {
+    padding: 20%;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 10px 10px 45px 0px rgba(0, 0, 0, 0.31);
+}
