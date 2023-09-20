@@ -17,10 +17,18 @@ body {
     /* font-family: "Spectral", serif; */
 }
 
-h1 {
+.centered-text {
     text-align: center;
+}
+
+h1 {
     color: var(--red-hue);
     font-family: "Metal Mania", cursive;
+    font-size: 3rem;
+}
+
+.intro-text {
+    font-size: 1.25rem;
 }
 
 .main-container {

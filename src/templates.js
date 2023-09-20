@@ -73,7 +73,11 @@ function layout(title, content) {
         <body>
 
           <div class="main-container">
-            <h1>Paranormal Activity Newsboard</h1>
+            <h1 class="centered-text">Paranormal Activity Newsboard</h1>
+            <p class="intro-text centered-text">
+              Welcome to Paranormal Activity Newsboard, for all lovers of paranormal activities, strange sightings, and miscellaenous wonders.
+              Share your experiences or lurk in the dark, the choice is yours.
+            </p>
             <div class="child-container">
              ${content}
             </div>
