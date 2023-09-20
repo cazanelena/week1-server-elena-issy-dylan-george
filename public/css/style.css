@@ -41,6 +41,10 @@ h2 {
     font-size: 2rem;
 }
 
+label {
+    padding-bottom: 0.5rem;
+}
+
 .intro-text {
     font-size: 1rem;
 }
@@ -84,11 +88,23 @@ h2 {
 }
 
 .deletePostButton {
-    padding: 2px;
+    padding: 0.5rem;
     width: auto;
-    border: 1px solid var(--red-hue);
-    border-radius: 0;
-    float: right;
+    aspect-ratio: 1/1;
+    box-shadow: inset 0px 1px 0px 0px #f29c93;
+    background: linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+    background-color: #fe1a00;
+    border-radius: 6px;
+    border: 1px solid #d83526;
+    color: white;
+}
+.deletePostButton:hover {
+    background: linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
+    background-color: #ce0100;
+}
+.deletePostButton:active {
+    position: relative;
+    top: 1px;
 }
 
 .bigger-button:hover {
@@ -133,6 +149,8 @@ li {
     grid-template-areas:
         "message message"
         "user-info delete-link";
+    justify-items: stretch;
+    align-items: center;
 }
 
 .message {
@@ -145,4 +163,5 @@ li {
 
 .delete-link {
     grid-area: delete-link;
+    justify-self: end;
 }

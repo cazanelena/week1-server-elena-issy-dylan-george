@@ -58,7 +58,7 @@ function renderingPosts(posts) {
     <ul>
       ${posts.map((post, index) => postItem(post, index)).join("")}
     </ul>
-    <a href="/submit-post"><button id="addPostButton">Add Post</button></a>
+    <a href="/submit-post"><button id="addPostButton" class="bigger-button">Add Post</button></a>
     `;
     return layout(title, content);
 }
@@ -84,10 +84,12 @@ function postItem(post, index) {
     return `
       <li class="message-container">
         <p class="message">${sanitize(post.message)}</p>
-        <p class="user-info">By ${sanitize(post.username)} | ${date} ${formattedTime}</p>
+        <p class="user-info">By ${sanitize(
+            post.username
+        )} | ${date} ${formattedTime}</p>
 
         <a href="/delete-post/${index}" class="delete-link">
-          <button class="deletePostButton">Delete</button>
+          <button class="deletePostButton">x</button>
         </a>
       </li>
     `;
