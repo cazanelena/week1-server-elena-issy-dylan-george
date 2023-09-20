@@ -16,7 +16,9 @@ function form(errors = {}, values = {}) {
           <label for="message">Message</label>
           <textarea
             id="message"
-            name="message">${values.message ? sanitize(values.message) : ""}</textarea>
+            name="message">${
+                values.message ? sanitize(values.message) : ""
+            }</textarea>
           ${validation(errors.message)}
         </p>
         <button>Send</button>
@@ -26,15 +28,15 @@ function form(errors = {}, values = {}) {
 }
 
 function sanitize(unsafe) {
-  return unsafe.replace(/</g, "&lt;");
+    return unsafe.replace(/</g, "&lt;");
 }
 
 function validation(message) {
-  if (message) {
-    return `<span style="color: red">${message}</span>`;
-  } else {
-    return "";
-  }
+    if (message) {
+        return `<span style="color: red">${message}</span>`;
+    } else {
+        return "";
+    }
 }
 
 function defaultPosts() {
