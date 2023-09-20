@@ -229,16 +229,6 @@ li {
     list-style-type: none;
 }
 
-.misinfo-warning {
-    grid-area: misinfo-warning;
-    margin: 0px;
-    padding: 0px;
-    border-radius: 3px;
-    /* border-left: 5px solid hsl(0, 60%, 60%); */
-    /* background-color: hsl(0, 100%, 90%); */
-    color: var(--red-hue);
-}
-
 /*--------------------------
    #Message Containers
 --------------------------*/
@@ -278,6 +268,16 @@ ul {
 .link {
     grid-area: link;
     justify-self: end;
+}
+
+.misinfo-warning {
+    grid-area: misinfo-warning;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 3px;
+    /* border-left: 5px solid hsl(0, 60%, 60%); */
+    /* background-color: hsl(0, 100%, 90%); */
+    color: var(--red-hue);
 }
 
 /* Medium size devices */

@@ -64,26 +64,25 @@ function renderingPosts(posts) {
 }
 
 function postItem(post, index) {
-    const date = new Date().toLocaleDateString("en-us", {
-        weekday: "long",
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    });
-    const date2 = new Date();
+  const date = new Date().toLocaleDateString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+  });
+  const date2 = new Date();
 
-    // Create options for formatting the time
-    const timeOptions = {
-        hour: "numeric",
-        minute: "numeric",
-        hour12: false, // Use 24-hour format
-    };
+  // Create options for formatting the time
+  const timeOptions = {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: false, // Use 24-hour format
+  };
 
-    const formattedTime = date2.toLocaleTimeString("en-GB", timeOptions);
-    const flagInfo = !post.flagCount
-        ? ""
-        : `<span class="flag-count"><i class="fa-solid fa-triangle-exclamation"></i> ${post.flagCount} users flagged this post for spreading misinformation</span>`;
-    const html = `
+  const formattedTime = date2.toLocaleTimeString("en-GB", timeOptions);
+  const flagInfo = !post.flagCount ? "" :
+  `<span class="misinfo-warning"><i class="fa-solid fa-triangle-exclamation"></i> ${post.flagCount} users flagged this post for spreading misinformation</span>`;
+  const html = `
     <li class="message-container">
       <p class="message">${sanitize(post.message)}</p>
       <p class="user-info">By ${sanitize(
@@ -97,7 +96,7 @@ function postItem(post, index) {
           <button class="flagPostButton"><i class="fa-solid fa-flag"></i></button>
         </a>
       </span>
-      <span class="misinfo-warning">${flagInfo}</span>
+      ${flagInfo}
     </li>
   `;
     return html;
