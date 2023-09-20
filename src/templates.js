@@ -100,6 +100,11 @@ function layout(title, content) {
         <head>
           <title>${title}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
+          <!-- Favicons and Touch Icons -->
+          <link rel="icon" href="/images/favicon-32.png">
+          <link rel="icon" href="/images/favicon-128.png">
+          <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+		      <!-- Stylesheets and Fonts -->
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Spectral:wght@300&display=swap" rel="stylesheet">
