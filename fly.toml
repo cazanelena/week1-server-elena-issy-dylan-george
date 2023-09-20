@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for week1-dylan-issy-elena-george-microblogging on 2023-09-20T10:52:53+01:00
+# fly.toml app configuration file generated for week1-issy-dylan-george-elena-microblogging on 2023-09-20T12:19:38+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "week1-dylan-issy-elena-george-microblogging"
+app = "week1-issy-dylan-george-elena-microblogging"
 primary_region = "lhr"
 
 [build]
