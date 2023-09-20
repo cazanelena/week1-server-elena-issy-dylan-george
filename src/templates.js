@@ -21,7 +21,7 @@ function form(errors = {}, values = {}) {
             }</textarea>
           ${validation(errors.message)}
         </p>
-        <button>Send</button>
+        <button class="bigger-button">Send</button>
       </form>
     `;
     return layout(title, content);
@@ -44,7 +44,7 @@ function defaultPosts() {
 
     const content = `
     <h2>There have been no sightings yet...</h2>
-    <a href="/submit-post"><button>Report Activity</button></a>
+    <a href="/submit-post"><button class="bigger-button">Report Activity</button></a>
     `;
 
     return layout(title, content);
