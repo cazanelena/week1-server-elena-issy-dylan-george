@@ -1,8 +1,7 @@
-
 function form(errors = {}, values = {}) {
-  const title = "Report a Paranormal Event";
+    const title = "Report a Paranormal Event";
 
-  const content = `
+    const content = `
     <h2>New post</h2>
     <form method="POST">
       <p>
@@ -25,43 +24,43 @@ function form(errors = {}, values = {}) {
       <button class="bigger-button">Send</button>
     </form>
   `;
-  return layout(title, content);
+    return layout(title, content);
 }
 
 function sanitize(unsafe) {
-  return unsafe.replace(/</g, "&lt;");
+    return unsafe.replace(/</g, "&lt;");
 }
 
 function validation(message) {
-  if (message) {
-      return `<span style="color: red">${message}</span>`;
-  } else {
-      return "";
-  }
+    if (message) {
+        return `<span style="color: red">${message}</span>`;
+    } else {
+        return "";
+    }
 }
 
 function defaultPosts() {
-  const title = "No Recent Paranormal Events";
+    const title = "No Recent Paranormal Events";
 
-  const content = `
+    const content = `
   <h2>There have been no sightings yet...</h2>
   <a href="/submit-post"><button class="bigger-button">Report Activity</button></a>
   `;
 
-  return layout(title, content);
+    return layout(title, content);
 }
 
 function renderingPosts(posts) {
-  const title = "Recent Paranormal Activity";
+    const title = "Recent Paranormal Activity";
 
-  const content = `
+    const content = `
   <h2>All posts</h2>
   <ul>
     ${posts.map((post, index) => postItem(post, index)).join("")}
   </ul>
   <a href="/submit-post"><button id="addPostButton" class="bigger-button">Add Post</button></a>
   `;
-  return layout(title, content);
+    return layout(title, content);
 }
 
 function postItem(post, index) {
@@ -90,21 +89,21 @@ function postItem(post, index) {
           post.username
       )} at ${date} ${formattedTime}</p>
 
-      <span>
-      <a href="/delete-post/${index}" class="delete-link">
-        <button class="deletePostButton"><i class="fa-solid fa-trash-can"></i></button></a>
-      <a href="/flag-post/${index}" class="flag-link">
-        <button class="flagPostButton"><i class="fa-solid fa-flag"></i></button>
-      </a>
+      <span class="link">
+        <a href="/delete-post/${index}" class="delete-link">
+          <button class="deletePostButton"><i class="fa-solid fa-trash-can"></i></button></a>
+        <a href="/flag-post/${index}" class="flag-link">
+          <button class="flagPostButton"><i class="fa-solid fa-flag"></i></button>
+        </a>
       </span>
       ${flagInfo}
     </li>
   `;
-  return html;
+    return html;
 }
 
 function layout(title, content) {
-  return /*html*/ `
+    return /*html*/ `
     <!DOCTYPE html>
     <html>
       <head>

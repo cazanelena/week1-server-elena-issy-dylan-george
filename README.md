@@ -22,7 +22,9 @@ Then, start the server:
 node server
 ```
 
-The application will be running on port 3000 by default. You can visit it in your browser at http://localhost:3000.
+The application will be running on port 3000 by default. 
+
+After cloning the repo you can run the "npm run dev" command. This way you can visit it in your browser at http://localhost:3000.
 
 To submit a paranormal experience, click on the "Submit Post" link. You will be taken to a form where you can enter your username and message. Click the "Submit" button to submit your post.
 
@@ -32,7 +34,7 @@ To view paranormal experiences, simply visit the root of the website (http://loc
 
 To submit a paranormal experience:
 
-1. Visit http://localhost:3000 and click on the "Submit Post" link.
+1. Visit https://reporting-paranormal-activity.fly.dev/ and click on the "Submit Post" link.
 1. Enter your username and message.
 1. Click the "Submit" button.
 
@@ -50,3 +52,11 @@ To view paranormal experiences:
 ### Contribute
 
 If you would like to contribute to the development of this application, please feel free to fork the repository and submit a pull request.
+
+### src directory 
+
+This directory is the main source of our codebase. We separate this in 3 different files: index.js, server.js and templates.js. 
+- The index.js is where we defined the Port that the server is listening to.   
+- The server.js is where our server is created and we defined all the routes that the user can use, or be redirected to. 
+- We used the templates.js to store the functions that will render the html.
+
