@@ -81,20 +81,26 @@ function postItem(post, index) {
   };
 
   const formattedTime = date2.toLocaleTimeString("en-GB", timeOptions);
-
-  return `
+  const flagInfo = !post.flagCount ? "" :
+  `<span class="flag-count"><br /><i class="fa-solid fa-triangle-exclamation"></i> ${post.flagCount} users flagged this post for spreading misinformation</span>`;
+  const html = `
     <li class="message-container">
       <p class="message">${sanitize(post.message)}</p>
       <p class="user-info">By ${sanitize(
           post.username
       )} at ${date} ${formattedTime}</p>
 
+      <span>
       <a href="/delete-post/${index}" class="delete-link">
-        <button class="deletePostButton"><i class="fa-solid fa-trash-can"></i></button>
+        <button class="deletePostButton"><i class="fa-solid fa-trash-can"></i></button></a>
+      <a href="/flag-post/${index}" class="flag-link">
         <button class="flagPostButton"><i class="fa-solid fa-flag"></i></button>
       </a>
+      </span>
+      <span class="misinfo-warning">${flagInfo}</span>
     </li>
   `;
+  return html;
 }
 
 function layout(title, content) {

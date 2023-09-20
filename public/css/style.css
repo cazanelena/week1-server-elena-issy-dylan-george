@@ -264,7 +264,7 @@ ul {
     font-style: italic;
 }
 
-.delete-link {
+.delete-link, .flag-link {
     grid-area: delete-link;
     justify-self: end;
 }

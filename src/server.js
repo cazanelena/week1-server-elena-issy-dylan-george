@@ -6,6 +6,7 @@ server.use(express.static("public"));
 
 //Push posts to an array [{Username: Jon, Message: "Hi there", Date: "2nd, Sept, 2023"}]
 const posts = [];
+const postFlagCounts = [];
 
 server.get("/", (req, res) => {
     if (posts.length == 0) {
@@ -35,7 +36,7 @@ server.post("/submit-post", express.urlencoded({ extended: false }), (req, res) 
         res.status(400).send(body);
     } else {
         const created = Date.now();
-        posts.push({ username, message, created });
+        posts.push({ username, message, created, flagCount: 0 });
         res.redirect("/");
     }
 });
@@ -49,6 +50,17 @@ server.get("/delete-post/:index", (req, res) => {
     }
 
     // Redirect back to the main page after deleting the post
+    res.redirect("/");
+});
+
+server.get("/flag-post/:index", (req, res) => {
+    const index = req.params.index;
+
+    if (index >= 0 && index < posts.length) {
+        posts[index].flagCount++;
+    }
+
+    // Redirect back to the main page after incrementing the flag counter
     res.redirect("/");
 });
 
