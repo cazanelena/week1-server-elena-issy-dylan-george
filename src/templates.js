@@ -1,4 +1,4 @@
-function form() {
+function form(errors = {}, values = {}) {
     const title = "Report a Paranormal Event";
 
     const content = `
@@ -6,16 +6,35 @@ function form() {
       <form method="POST">
         <p>
           <label for="username">Username</label>
-          <input id="username" name="username">
+          <input
+            id="username"
+            name="username"
+            value="${values.username ? sanitize(values.username) : ""}"
+          >
         </p>
         <p>
           <label for="message">Message</label>
-          <textarea id="message" name="message"></textarea>
+          <textarea
+            id="message"
+            name="message">${values.message ? sanitize(values.message) : ""}</textarea>
+          ${validation(errors.message)}
         </p>
         <button>Send</button>
       </form>
     `;
     return layout(title, content);
+}
+
+function sanitize(unsafe) {
+  return unsafe.replace(/</g, "&lt;");
+}
+
+function validation(message) {
+  if (message) {
+    return `<span style="color: red">${message}</span>`;
+  } else {
+    return "";
+  }
 }
 
 function defaultPosts() {
@@ -47,8 +66,8 @@ function postItem(post, index) {
     const prettyDate = date.toLocaleString("en-GB");
     return `
       <li>
-        <p>${post.message}</p>
-        <p>—${post.username} | ${prettyDate}</p>
+        <p>${sanitize(post.message)}</p>
+        <p>—${sanitize(post.username)} | ${prettyDate}</p>
         <a href="/delete-post/${index}" class="delete-link">
           <button class="deletePostButton">Delete</button>
         </a>

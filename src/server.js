@@ -31,7 +31,8 @@ server.post("/submit-post", express.urlencoded({ extended: false }), (req, res) 
 
     // if there are errors:
     if (Object.keys(errors).length) {
-        const body = form();
+        const body = form(errors, req.body);
+        res.status(400).send(body);
     } else {
         const created = Date.now();
         posts.push({ username, message, created });
