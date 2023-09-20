@@ -64,12 +64,28 @@ function renderingPosts(posts) {
 }
 
 function postItem(post, index) {
-    const date = new Date(post.created);
-    const prettyDate = date.toLocaleString("en-GB");
+    const date = new Date().toLocaleDateString("en-us", {
+        weekday: "long",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+    });
+    const date2 = new Date();
+
+    // Create options for formatting the time
+    const timeOptions = {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: false, // Use 24-hour format
+    };
+
+    const formattedTime = date2.toLocaleTimeString("en-GB", timeOptions);
+
     return `
       <li class="message-container">
         <p class="message">${sanitize(post.message)}</p>
-        <p class="user-info">—${sanitize(post.username)} | ${prettyDate}</p>
+        <p class="user-info">By ${sanitize(post.username)} | ${date} ${formattedTime}</p>
+
         <a href="/delete-post/${index}" class="delete-link">
           <button class="deletePostButton">Delete</button>
         </a>
