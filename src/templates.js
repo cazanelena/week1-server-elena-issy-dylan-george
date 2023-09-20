@@ -82,7 +82,7 @@ function postItem(post, index) {
 
   const formattedTime = date2.toLocaleTimeString("en-GB", timeOptions);
   const flagInfo = !post.flagCount ? "" :
-  `<span class="flag-count"><br /><i class="fa-solid fa-triangle-exclamation"></i> ${post.flagCount} users flagged this post for spreading misinformation</span>`;
+  `<span class="misinfo-warning"><i class="fa-solid fa-triangle-exclamation"></i> ${post.flagCount} users flagged this post for spreading misinformation</span>`;
   const html = `
     <li class="message-container">
       <p class="message">${sanitize(post.message)}</p>
@@ -97,7 +97,7 @@ function postItem(post, index) {
         <button class="flagPostButton"><i class="fa-solid fa-flag"></i></button>
       </a>
       </span>
-      <span class="misinfo-warning">${flagInfo}</span>
+      ${flagInfo}
     </li>
   `;
   return html;

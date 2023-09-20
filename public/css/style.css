@@ -229,14 +229,6 @@ li {
     list-style-type: none;
 }
 
-.misinfo-warning {
-    margin: 0px;
-    padding: 0px;
-    border-radius: 3px;
-    border-left: 5px solid hsl(0, 60%, 60%);
-    background-color: hsl(0, 100%, 90%);
-}
-
 /*--------------------------
    #Message Containers
 --------------------------*/
@@ -266,4 +258,13 @@ li {
 .delete-link, .flag-link {
     grid-area: delete-link;
     justify-self: end;
+}
+
+.misinfo-warning {
+    margin: 0px;
+    padding: 7px;
+    border-radius: 3px;
+    border-left: 5px solid hsl(0, 60%, 60%);
+    background-color: hsl(0, 100%, 90%);
+    box-shadow: 2px 2px 1px #ccc;
 }
