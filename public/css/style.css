@@ -1,11 +1,48 @@
+/**
+ * TABLE OF CONTENTS
+ *
+ * Global Styles
+ *    - Reset
+ *    - Root Variables
+ *    - Body Styles
+ *    - Text Centering
+ *    - Heading Styles
+ *    - Label Styles
+ *    - Intro Text
+ *
+ * Page Structure
+ *    - Main Container
+ *    - Child Container
+ *
+ * Buttons
+ *    - Bigger Button
+ *    - Delete Post Button
+ *
+ * Form Styling
+ *    - Form Styles
+ *    - Input and Textarea Styles
+ *
+ * List Styling
+ *    - List Item Styles
+ *
+ * Message Containers
+ *    - Message Container Styles
+ */
+
+/*-------------------
+   #Global Styles
+-------------------*/
+
+/* Reset */
 * {
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
     scroll-behavior: smooth;
 }
 
+/* Root Variables */
 :root {
-    /* colours */
+    /* colors */
     --background: #fcf8f8;
     --red-hue: #fe3333;
     --black: #000;
@@ -16,15 +53,18 @@
     --border-radius: 7px;
 }
 
+/* Body Styles */
 body {
     background-color: var(--background);
     /* font-family: "Spectral", serif; */
 }
 
+/* Text Centering */
 .centered-text {
     text-align: center;
 }
 
+/* Heading Styles */
 h1,
 h2 {
     font-family: "Metal Mania", cursive;
@@ -32,7 +72,6 @@ h2 {
 }
 
 h1 {
-    /* font-family: "Metal Mania", cursive; */
     font-size: 3rem;
 }
 
@@ -41,14 +80,21 @@ h2 {
     font-size: 2rem;
 }
 
+/* Label Styles */
 label {
     padding-bottom: 0.5rem;
 }
 
+/* Intro Text */
 .intro-text {
     font-size: 1rem;
 }
 
+/*----------------------
+   #Page Structure
+----------------------*/
+
+/* Main Container */
 .main-container {
     width: 70%;
     padding: 50px;
@@ -66,6 +112,7 @@ label {
     margin-top: 50px;
 }
 
+/* Child Container */
 .child-container {
     width: 70%;
     padding: 5%;
@@ -74,6 +121,11 @@ label {
     box-shadow: 10px 10px 15px -2px rgba(28, 115, 232, 0.35);
 }
 
+/*-------------------
+   #Buttons
+-------------------*/
+
+/* Bigger Button */
 .bigger-button {
     width: 100%;
     padding: 20px;
@@ -87,6 +139,7 @@ label {
     text-shadow: 0px 1px 0px #263666;
 }
 
+/* Delete Post Button */
 .deletePostButton {
     padding: 0.5rem;
     width: auto;
@@ -98,10 +151,12 @@ label {
     border: 1px solid #d83526;
     color: white;
 }
+
 .deletePostButton:hover {
     background: linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
     background-color: #ce0100;
 }
+
 .deletePostButton:active {
     position: relative;
     top: 1px;
@@ -117,6 +172,11 @@ label {
     top: 1px;
 }
 
+/*-------------------
+   #Form Styling
+-------------------*/
+
+/* Form Styles */
 form {
     padding: 2rem;
     border-radius: 1rem;
@@ -129,6 +189,7 @@ form > * > * {
     display: block;
 }
 
+/* Input and Textarea Styles */
 input,
 textarea {
     padding: 1rem;
@@ -136,10 +197,20 @@ textarea {
     border-radius: var(--border-radius);
 }
 
+/*-------------------
+   #List Styling
+-------------------*/
+
+/* List Item Styles */
 li {
     list-style-type: none;
 }
 
+/*--------------------------
+   #Message Containers
+--------------------------*/
+
+/* Message Container Styles */
 .message-container {
     display: grid;
     grid-template-columns: 1.7fr 0.3fr;
