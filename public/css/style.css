@@ -251,7 +251,7 @@ ul {
 .message-container {
     display: grid;
     grid-template-columns: 1.7fr 0.3fr;
-    grid-template-rows: 1.5fr 0.5fr 1fr;
+    grid-template-rows: auto auto auto;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
