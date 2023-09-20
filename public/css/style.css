@@ -255,7 +255,7 @@ li {
     grid-area: user-info;
 }
 
-.delete-link {
+.delete-link, .flag-link {
     grid-area: delete-link;
     justify-self: end;
 }
