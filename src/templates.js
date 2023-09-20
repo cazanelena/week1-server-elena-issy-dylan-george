@@ -79,14 +79,14 @@ function postItem(post, index) {
 
 function layout(title, content) {
     return /*html*/ `
-      <!doctype html>
+      <!DOCTYPE html>
       <html>
         <head>
           <title>${title}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Spectral:wght@300&display=swap" rel="stylesheet">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Spectral:wght@300&display=swap" rel="stylesheet">
 
 
           <link rel="stylesheet" href="css/style.css">

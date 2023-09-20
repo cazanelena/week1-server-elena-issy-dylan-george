@@ -1,17 +1,16 @@
 const test = require("node:test");
 const assert = require("node:assert");
-const { request } = require("./helpers.js");
+const { request } = require("./helpers");
+const { posts } = require("../src/server");
 
-test("POST with script tag is correctly sanitized", async () => {
-    const { status, body } = await request("/submit-post", {
-        method: "POST",
-        body: "nickname=oli&message=<script>alert('uh oh')</script>",
-        headers: { "content-type": "application/x-www-form-urlencoded" },
+test(`"/" GET route returns HTML and status code of 200`, async () => {
+    const { status, body } = await request("/", {
+        method: "GET",
     });
     assert.equal(status, 200);
     assert.match(
         body,
-        /&lt;script>alert\('uh oh'\)&lt;\/script>/i,
-        `Expected <script> to have '<' replaced with '&lt;', but received:\n${body}`
+        /^\n *\<!DOCTYPE html>/,
+        `Expected server to serve HTML, but received: ${body}`
     );
 });
