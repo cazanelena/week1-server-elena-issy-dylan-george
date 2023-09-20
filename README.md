@@ -53,7 +53,7 @@ To view paranormal experiences:
 
 If you would like to contribute to the development of this application, please feel free to fork the repository and submit a pull request.
 
-### Src directory 
+### src directory 
 
 This directory is the main source of our codebase. We separate this in 3 different files: index.js, server.js and templates.js. 
 - The index.js is where we defined the Port that the server is listening to.   
