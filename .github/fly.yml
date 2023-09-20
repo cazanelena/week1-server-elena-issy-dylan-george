@@ -2,14 +2,15 @@ name: Fly Deploy
 
 on:
   pull_request:
-    types:
-      - closed
+    branches:
+      - main
+    types: [closed]
 
 jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
+
 
     steps:
       - uses: actions/checkout@v2
