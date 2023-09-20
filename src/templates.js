@@ -21,7 +21,7 @@ function form(errors = {}, values = {}) {
           }</textarea>
         ${validation(errors.message)}
       </p>
-      <button class="bigger-button">Send</button>
+      <button class="bigger-button">Post</button>
     </form>
   `;
     return layout(title, content);
