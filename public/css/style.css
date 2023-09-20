@@ -230,11 +230,13 @@ li {
 }
 
 .misinfo-warning {
+    grid-area: misinfo-warning;
     margin: 0px;
     padding: 0px;
     border-radius: 3px;
-    border-left: 5px solid hsl(0, 60%, 60%);
-    background-color: hsl(0, 100%, 90%);
+    /* border-left: 5px solid hsl(0, 60%, 60%); */
+    /* background-color: hsl(0, 100%, 90%); */
+    color: var(--red-hue);
 }
 
 /*--------------------------
@@ -249,12 +251,13 @@ ul {
 .message-container {
     display: grid;
     grid-template-columns: 1.7fr 0.3fr;
-    grid-template-rows: 1.5fr 0.5fr;
+    grid-template-rows: 1.5fr 0.5fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
         "message message"
-        "user-info delete-link";
+        "user-info link"
+        "misinfo-warning misinfo-warning";
     justify-items: stretch;
     align-items: center;
     padding: 1rem;
@@ -272,9 +275,8 @@ ul {
     font-style: italic;
 }
 
-.delete-link,
-.flag-link {
-    grid-area: delete-link;
+.link {
+    grid-area: link;
     justify-self: end;
 }
 
