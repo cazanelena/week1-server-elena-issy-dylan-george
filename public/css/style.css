@@ -53,3 +53,11 @@ h1 {
     border-radius: 30px;
     box-shadow: 10px 10px 45px 0px rgba(0, 0, 0, 0.31);
 }
+
+button {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--red-hue);
+    background-color: #f4d8d6;
+    border-radius: 7px;
+}
