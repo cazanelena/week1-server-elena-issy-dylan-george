@@ -6,15 +6,21 @@
 
 :root {
     /* colours */
-    --background: #94cc9f;
+    --background: #e9e7e2;
+    --red-hue: #fe3333;
+    --light-blue: #488ad4;
+    --mid-blue: #095ca9;
 }
 
 body {
     background-color: var(--background);
+    /* font-family: "Spectral", serif; */
 }
 
 h1 {
     text-align: center;
+    color: var(--red-hue);
+    font-family: "Metal Mania", cursive;
 }
 
 .main-container {
@@ -27,6 +33,10 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.main-container > *:not(:first-child) {
+    margin-top: 50px;
 }
 
 .child-container {

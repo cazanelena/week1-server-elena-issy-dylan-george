@@ -63,15 +63,20 @@ function layout(title, content) {
         <head>
           <title>${title}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Spectral:wght@300&display=swap" rel="stylesheet">
+
+
           <link rel="stylesheet" href="css/style.css">
         </head>
         <body>
-          <h1>Paranormal Activity Newsboard</h1>
 
           <div class="main-container">
+            <h1>Paranormal Activity Newsboard</h1>
             <div class="child-container">
-          ${content}
-          </div>
+             ${content}
+            </div>
           </div>
         </body>
 
