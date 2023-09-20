@@ -67,9 +67,9 @@ function postItem(post, index) {
     const date = new Date(post.created);
     const prettyDate = date.toLocaleString("en-GB");
     return `
-      <li>
-        <p>${sanitize(post.message)}</p>
-        <p>—${sanitize(post.username)} | ${prettyDate}</p>
+      <li class="message-container">
+        <p class="message">${sanitize(post.message)}</p>
+        <p class="user-info">—${sanitize(post.username)} | ${prettyDate}</p>
         <a href="/delete-post/${index}" class="delete-link">
           <button class="deletePostButton">Delete</button>
         </a>
