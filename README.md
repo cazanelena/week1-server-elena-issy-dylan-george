@@ -34,7 +34,7 @@ To view paranormal experiences, simply visit the root of the website (http://loc
 
 To submit a paranormal experience:
 
-1. Visit http://localhost:3000 and click on the "Submit Post" link.
+1. Visit https://reporting-paranormal-activity.fly.dev/ and click on the "Submit Post" link.
 1. Enter your username and message.
 1. Click the "Submit" button.
 
