@@ -19,7 +19,7 @@ npm install
 Then, start the server:
 
 ```
-node server
+npm run dev
 ```
 
 The application will be running on port 3000 by default. 
