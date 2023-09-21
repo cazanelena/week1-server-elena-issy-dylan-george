@@ -215,6 +215,7 @@ form > * > * {
 /* Input and Textarea Styles */
 input,
 textarea {
+    resize: none;
     padding: 1rem;
     border: 1px solid var(--blue);
     border-radius: var(--border-radius);
