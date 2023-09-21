@@ -45,12 +45,20 @@
 :root {
     /* colors */
     --background: #fcf8f8;
+    --container-background: #f2f9ff;
     --red-hue: #fe3333;
     --pink: #f29c93;
     --black: #000;
     --blue: #1c73e8;
     --button-blue: #2dabf9;
-    /* --mid-blue: #095ca9; */
+    --button-blue-accent: #0688fa;
+    --blue-border: #1c75e8;
+    --button-del-red: #fe1a00;
+    --button-del-red-accent: #ce0100;
+    --button-del-red-border: #d83526;
+    --button-flag-yellow: #ffd500;
+    --button-flag-yellow-hover: #cc9900;
+    --white: #fff;
 
     /* layout */
     --border-radius: 7px;
@@ -59,7 +67,6 @@
 /* Body Styles */
 body {
     background-color: var(--background);
-    /* font-family: "Spectral", serif; */
 }
 
 /* Text Centering */
@@ -102,9 +109,7 @@ label {
     width: 100%;
     padding: 20px;
     margin: 0 auto;
-    /* height: 100vh; */
     display: flex;
-    /* text-align: center; */
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
@@ -119,7 +124,7 @@ label {
 .child-container {
     width: 100%;
     padding: 5%;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 30px;
     box-shadow: 10px 10px 15px -2px rgba(28, 115, 232, 0.35);
 }
@@ -134,10 +139,14 @@ label {
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: inset 0px 1px 0px 0px #29bbff;
-    background: linear-gradient(to bottom, var(--button-blue) 5%, #0688fa 100%);
+    background: linear-gradient(
+        to bottom,
+        var(--button-blue) 5%,
+        var(--button-blue-accent) 100%
+    );
     background-color: var(--button-blue);
-    border: 1px solid #1c75e8;
-    color: #ffffff;
+    border: 1px solid var(--blue-border);
+    color: var(--white);
     text-decoration: none;
     text-shadow: 0px 1px 0px #263666;
 }
@@ -154,14 +163,22 @@ label {
 
 .deletePostButton {
     box-shadow: inset 0px 1px 0px 0px var(--pink);
-    background: linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
-    background-color: #fe1a00;
-    border: 1px solid #d83526;
+    background: linear-gradient(
+        to bottom,
+        var(--button-del-red) 5%,
+        var(--button-del-red-accent) 100%
+    );
+    background-color: var(--button-del-red);
+    border: 1px solid var(--button-del-red-border);
 }
 
 .deletePostButton:hover {
-    background: linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
-    background-color: #ce0100;
+    background: linear-gradient(
+        to bottom,
+        var(--button-del-red-accent) 5%,
+        var(--button-del-red) 100%
+    );
+    background-color: var(--button-del-red-accent);
 }
 
 .deletePostButton:active,
@@ -173,19 +190,23 @@ label {
 
 .flagPostButton {
     box-shadow: inset 0px 1px 0px 0px #f2e291;
-    background: linear-gradient(to bottom, #ffd500 5%, #ccaa00 100%);
-    background-color: #ffd500;
+    background: linear-gradient(to bottom, var(--button-flag-yellow) 5%, #ccaa00 100%);
+    background-color: var(--button-flag-yellow);
     border: 1px solid #d9bb26;
 }
 
 .flagPostButton:hover {
-    background: linear-gradient(to bottom, #cc9900 5%, #ffc400 100%);
-    background-color: #cc9900;
+    background: linear-gradient(to bottom, var(--button-flag-yellow-hover) 5%, #ffc400 100%);
+    background-color: var(--button-flag-yellow-hover);
 }
 
 .bigger-button:hover {
-    background: linear-gradient(to bottom, #0688fa 5%, var(--button-blue) 100%);
-    background-color: #0688fa;
+    background: linear-gradient(
+        to bottom,
+        var(--button-blue-accent) 5%,
+        var(--button-blue) 100%
+    );
+    background-color: var(--button-blue-accent);
 }
 
 /*-------------------
@@ -196,8 +217,6 @@ label {
 form {
     padding: 2rem;
     border-radius: 1rem;
-    /* background-color: #f8cfc6;
-    border: 1px solid var(--red-hue); */
 }
 
 form > * > * {
@@ -246,7 +265,7 @@ ul {
     padding: 1rem;
     margin: 2rem;
     border-radius: 15px;
-    background-color: #f2f9ff;
+    background-color: var(--container-background);
 }
 
 .message {
@@ -268,8 +287,6 @@ ul {
     margin: 0px;
     padding: 0px;
     border-radius: 3px;
-    /* border-left: 5px solid hsl(0, 60%, 60%); */
-    /* background-color: hsl(0, 100%, 90%); */
     color: var(--red-hue);
 }
 
@@ -285,6 +302,5 @@ ul {
 @media screen and (min-width: 1250px) {
     .child-container {
         width: 70%;
-        /* padding: 5%; */
     }
 }
