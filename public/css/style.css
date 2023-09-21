@@ -46,8 +46,10 @@
     /* colors */
     --background: #fcf8f8;
     --red-hue: #fe3333;
+    --pink: #f29c93;
     --black: #000;
     --blue: #1c73e8;
+    --button-blue: #2dabf9;
     /* --mid-blue: #095ca9; */
 
     /* layout */
@@ -132,8 +134,8 @@ label {
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: inset 0px 1px 0px 0px #29bbff;
-    background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
-    background-color: #2dabf9;
+    background: linear-gradient(to bottom, var(--button-blue) 5%, #0688fa 100%);
+    background-color: var(--button-blue);
     border: 1px solid #1c75e8;
     color: #ffffff;
     text-decoration: none;
@@ -141,16 +143,20 @@ label {
 }
 
 /* Delete Post Button */
-.deletePostButton {
+.deletePostButton,
+.flagPostButton {
     padding: 0.5rem;
     width: auto;
     aspect-ratio: 1/1;
-    box-shadow: inset 0px 1px 0px 0px #f29c93;
+    border-radius: 6px;
+    color: white;
+}
+
+.deletePostButton {
+    box-shadow: inset 0px 1px 0px 0px var(--pink);
     background: linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
     background-color: #fe1a00;
-    border-radius: 6px;
     border: 1px solid #d83526;
-    color: white;
 }
 
 .deletePostButton:hover {
@@ -158,21 +164,18 @@ label {
     background-color: #ce0100;
 }
 
-.deletePostButton:active {
+.deletePostButton:active,
+.flagPostButton:active,
+.bigger-button:active {
     position: relative;
     top: 1px;
 }
 
 .flagPostButton {
-    padding: 0.5rem;
-    width: auto;
-    aspect-ratio: 1/1;
     box-shadow: inset 0px 1px 0px 0px #f2e291;
     background: linear-gradient(to bottom, #ffd500 5%, #ccaa00 100%);
     background-color: #ffd500;
-    border-radius: 6px;
     border: 1px solid #d9bb26;
-    color: white;
 }
 
 .flagPostButton:hover {
@@ -180,19 +183,9 @@ label {
     background-color: #cc9900;
 }
 
-.flagPostButton:active {
-    position: relative;
-    top: 1px;
-}
-
 .bigger-button:hover {
-    background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+    background: linear-gradient(to bottom, #0688fa 5%, var(--button-blue) 100%);
     background-color: #0688fa;
-}
-
-.bigger-button:active {
-    position: relative;
-    top: 1px;
 }
 
 /*-------------------
@@ -240,9 +233,9 @@ ul {
 
 .message-container {
     display: grid;
-    grid-template-columns: 1.7fr 0.3fr;
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
-    gap: 0px 0px;
+    gap: 0px 15px;
     grid-auto-flow: row;
     grid-template-areas:
         "message message"
