@@ -10,8 +10,8 @@
         "start": "node src/index",
         "dev": "nodemon src/index",
         "format": "npx prettier --write .",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start-fly": "node src/index"
+        "start-fly": "node src/index",
+        "test": "node --test"
     },
     "keywords": [],
     "author": "",
