@@ -49,6 +49,14 @@ To view paranormal experiences:
 -   Delete your own posts
 -   Simple and easy-to-use interface
 
+### Testing
+
+To run test scripts:
+
+```
+npm test
+```
+
 ### Contribute
 
 If you would like to contribute to the development of this application, please feel free to fork the repository and submit a pull request.
