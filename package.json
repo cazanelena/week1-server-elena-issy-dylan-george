@@ -10,8 +10,8 @@
         "start": "node src/index",
         "dev": "nodemon src/index",
         "format": "npx prettier --write .",
-        "start-fly": "node src/index",
-        "test": "node --test"
+        "test": "node --test",
+        "start-fly": "node src/index"
     },
     "keywords": [],
     "author": "",
