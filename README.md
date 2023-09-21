@@ -60,3 +60,8 @@ This directory is the main source of our codebase. We separate this in 3 differe
 - The server.js is where our server is created and we defined all the routes that the user can use, or be redirected to. 
 - We used the templates.js to store the functions that will render the html.
 
+
+### Deployment issues
+- If the site is not accessible at this link: https://reporting-paranormal-activity.fly.dev/ there might be some issues on the fly.io side. 
+- One fix can be checking the actions workflow on github and try to run some of the jobs or see if there are any jobs that failed. By running them again might fix the problem.
+- If none of the above works the app is available locally at http://localhost:3000 after you run the npm run dev in the terminal. 
