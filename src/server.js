@@ -6,7 +6,6 @@ server.use(express.static("public"));
 
 //Push posts to an array [{Username: Jon, Message: "Hi there", Date: "2nd, Sept, 2023"}]
 const posts = [];
-const postFlagCounts = [];
 
 server.get("/", (req, res) => {
     if (posts.length == 0) {
