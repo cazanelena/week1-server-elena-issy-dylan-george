@@ -8,6 +8,8 @@ The core functions of the application are:
 -   **View paranormal experiences:** Users can view all recent paranormal experiences by visiting the root of the website. The website displays a list of all recent submissions, along with the username and date of each experience.
 -   **Delete a paranormal experience:** Users can delete their own paranormal experiences by clicking on the "Delete Post" link next to the post.
 
+### Installation Instructions
+
 To run the application, clone the repository and install the dependencies:
 
 ```
