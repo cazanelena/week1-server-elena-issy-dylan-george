@@ -1,7 +1,7 @@
 function form(errors = {}, values = {}) {
     const title = "Report a Paranormal Event";
 
-    const content = `
+    const content = /*html*/ `
     <h2>New post</h2>
     <form method="POST">
       <p>
@@ -33,7 +33,7 @@ function sanitize(unsafe) {
 
 function validation(message) {
     if (message) {
-        return `<span style="color: red">${message}</span>`;
+        return /*html*/ `<span style="color: red">${message}</span>`;
     } else {
         return "";
     }
@@ -42,7 +42,7 @@ function validation(message) {
 function defaultPosts() {
     const title = "No Recent Paranormal Events";
 
-    const content = `
+    const content = /*html*/ `
   <h2>There have been no sightings yet...</h2>
   <a href="/submit-post"><button class="bigger-button">Report Activity</button></a>
   `;
@@ -53,7 +53,7 @@ function defaultPosts() {
 function renderingPosts(posts) {
     const title = "Recent Paranormal Activity";
 
-    const content = `
+    const content = /*html*/ `
   <h2>All posts</h2>
   <ul>
     ${posts.map((post, index) => postItem(post, index)).join("")}
@@ -64,25 +64,26 @@ function renderingPosts(posts) {
 }
 
 function postItem(post, index) {
-  const date = new Date().toLocaleDateString("en-us", {
-      weekday: "long",
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-  });
-  const date2 = new Date();
+    const date = new Date().toLocaleDateString("en-us", {
+        weekday: "long",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+    });
+    const date2 = new Date();
 
-  // Create options for formatting the time
-  const timeOptions = {
-      hour: "numeric",
-      minute: "numeric",
-      hour12: false, // Use 24-hour format
-  };
+    // Create options for formatting the time
+    const timeOptions = {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: false, // Use 24-hour format
+    };
 
-  const formattedTime = date2.toLocaleTimeString("en-GB", timeOptions);
-  const flagInfo = !post.flagCount ? "" :
-  `<span class="misinfo-warning"><i class="fa-solid fa-triangle-exclamation"></i> ${post.flagCount} users flagged this post for spreading misinformation</span>`;
-  const html = `
+    const formattedTime = date2.toLocaleTimeString("en-GB", timeOptions);
+    const flagInfo = !post.flagCount
+        ? ""
+        : /*html*/ `<span class="misinfo-warning"><i class="fa-solid fa-triangle-exclamation"></i> ${post.flagCount} users flagged this post for spreading misinformation</span>`;
+    const html = /*html*/ `
     <li class="message-container">
       <p class="message">${sanitize(post.message)}</p>
       <p class="user-info">By ${sanitize(
