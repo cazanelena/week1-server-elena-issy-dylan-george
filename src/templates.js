@@ -92,9 +92,9 @@ function postItem(post, index) {
 
       <span class="link">
         <a href="/delete-post/${index}" class="delete-link">
-          <button class="deletePostButton"><i class="fa-solid fa-trash-can"></i></button></a>
+          <button class="Button deletePostButton"><i class="fa-solid fa-trash-can"></i></button></a>
         <a href="/flag-post/${index}" class="flag-link">
-          <button class="flagPostButton"><i class="fa-solid fa-flag"></i></button>
+          <button class="Button flagPostButton"><i class="fa-solid fa-flag"></i></button>
         </a>
       </span>
       ${flagInfo}
