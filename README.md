@@ -11,8 +11,8 @@ The core functions of the application are:
 To run the application, clone the repository and install the dependencies:
 
 ```
-git clone https://github.com/cazanelena/paranormal-activity-newsboard.git
-cd paranormal-activity-newsboard
+git clone https://github.com/cazanelena/week1-server-elena-issy-dylan-george.git
+cd https://github.com/cazanelena/week1-server-elena-issy-dylan-george.git
 npm install
 ```
 
