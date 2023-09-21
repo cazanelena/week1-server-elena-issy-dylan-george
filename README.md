@@ -1,4 +1,4 @@
-## Paranormal Activity Newsboard Readme
+## Paranormal Activity Newsboard readMe
 
 The Paranormal Activity Newsboard is a web application that allows users to submit and view paranormal experiences. It is built using Node.js and the Express framework.
 
